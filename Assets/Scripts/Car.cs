@@ -12,7 +12,8 @@ public class Car : MonoBehaviour
     {
         this.speed += this.speedGainPerSecond * Time.deltaTime;
 
-        this.transform.Rotate(0f, this._steerValue * (this.turnSpeed * Time.deltaTime), 0f);
+        var turnValue = this._steerValue * (this.turnSpeed * Time.deltaTime);
+        this.transform.Rotate(0f, turnValue, 0f);
 
         this.transform.Translate(Vector3.forward * (this.speed * Time.deltaTime));
     }
