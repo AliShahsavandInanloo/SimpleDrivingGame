@@ -2,7 +2,9 @@ public class TagManager
 {
     #region PlayerPrefsKeys
 
-    public const string HighScoreKey = "HighScore";
+    public const string HighScoreKey   = "HighScore";
+    public const string EnergyKey      = "Energy";
+    public const string EnergyReadyKey = "EnergyReady";
 
     #endregion
 
