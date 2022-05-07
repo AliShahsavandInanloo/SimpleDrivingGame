@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private int maxEnergy;
-    [SerializeField] private int energyRechargeDuration;
+    [SerializeField] private int                        maxEnergy;
+    [SerializeField] private int                        energyRechargeDuration;
+    [SerializeField] private AndroidNotificationHandler androidNotificationHandler;
 
     private int      _energy;
     private TMP_Text _energyText;
@@ -65,6 +66,12 @@ public class MainMenu : MonoBehaviour
         {
             var energyReady = DateTime.Now.AddMinutes(this.energyRechargeDuration);
             PlayerPrefs.SetString(TagManager.EnergyReadyKey, energyReady.ToString());
+
+#if UNITY_ANDROID
+
+            this.androidNotificationHandler.ScheduleNotification(energyReady);
+
+#endif
         }
 
         SceneManager.LoadScene(TagManager.Sandbox);

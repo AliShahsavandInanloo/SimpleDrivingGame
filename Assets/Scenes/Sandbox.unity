@@ -3276,8 +3276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  turnSpeed: 125
-  speedGainPerSecond: 0.3
+  turnSpeed: 150
+  speedGainPerSecond: 0.5
 --- !u!65 &534120930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14372,6 +14372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b9d046cdb330b40bb308b01e71fe37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreMultiplier: 5
 --- !u!1001 &1847651130
 PrefabInstance:
   m_ObjectHideFlags: 0
