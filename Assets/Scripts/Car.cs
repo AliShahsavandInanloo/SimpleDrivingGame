@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Car : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class Car : MonoBehaviour
         this.transform.Rotate(0f, turnValue, 0f);
 
         this.transform.Translate(Vector3.forward * (this.speed * Time.deltaTime));
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(TagManager.ObstacleTag)) SceneManager.LoadScene(TagManager.MainMenu);
     }
 
     public void Steer(int value)
