@@ -20,4 +20,12 @@ public class ScoreSystem : MonoBehaviour
         this._score          += Time.deltaTime * this.scoreMultiplier;
         this._scoreText.text = Mathf.FloorToInt(this._score).ToString(CultureInfo.InvariantCulture);
     }
+
+    private void OnDestroy()
+    {
+        var currentHighScore = PlayerPrefs.GetInt(TagManager.HighScoreKey, 0);
+
+        if (this._score > currentHighScore)
+            PlayerPrefs.SetInt(TagManager.HighScoreKey, Mathf.FloorToInt(this._score));
+    }
 }
