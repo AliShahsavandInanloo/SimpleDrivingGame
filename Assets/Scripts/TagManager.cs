@@ -10,8 +10,13 @@ public class TagManager
 
     #region SceneNames
 
-    public const string MainMenu = "MainMenu";
-    public const string Sandbox  = "Sandbox";
+    public const string MainMenu   = "MainMenu";
+    public const string Sandbox    = "Sandbox";
+    public const string SunnyDay   = "SunnyDay";
+    public const string FoggyNight = "FoggyNight";
+    public const string Night      = "Night";
+    public const string RainyDay   = "RainyDay";
+    public const string RainyNight = "RainyNight";
 
     #endregion
 
