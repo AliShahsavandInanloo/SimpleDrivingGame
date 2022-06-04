@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     private Button   _changeMapButton;
     private TMP_Text _currentMapText;
     private int      _energy;
+    private Image    _energyImage;
     private TMP_Text _energyText;
     private TMP_Text _highScoreText;
     private Button   _playButton;
@@ -24,9 +25,10 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         this._highScoreText = GameObject.Find("HighScoreText").GetComponent<TMP_Text>();
-        this._energyText = GameObject.Find("PlayButton").GetComponentInChildren<TMP_Text>();
+        this._energyText = GameObject.Find("EnergyText").GetComponentInChildren<TMP_Text>();
         this._currentMapText = GameObject.Find("CurrentMap").GetComponentInChildren<TMP_Text>();
         this._playButton = GameObject.Find("PlayButton").GetComponentInChildren<Button>();
+        this._energyImage = GameObject.Find("Energy").GetComponent<Image>();
         this._changeMapButton = GameObject.Find("ChangeMapButton").GetComponentInChildren<Button>();
         this._backToMainMenuButton = GameObject.Find("BackButton").GetComponentInChildren<Button>();
 
@@ -74,7 +76,7 @@ public class MainMenu : MonoBehaviour
                 Invoke(nameof(EnergyRecharged), (energyReady - DateTime.Now).Seconds);
         }
 
-        this._energyText.text = $"Play ({this._energy})";
+        this._energyText.text = $"X{this._energy}";
     }
 
     private void EnergyRecharged()
@@ -82,12 +84,16 @@ public class MainMenu : MonoBehaviour
         this._energy = this.maxEnergy;
         PlayerPrefs.SetInt(TagManager.EnergyKey, this._energy);
 
-        this._energyText.text = $"Play ({this._energy})";
+        this._energyText.text = $"X{this._energy}";
     }
 
     public void ChangeMap()
     {
         this.mapPanel.SetActive(true);
+        this._changeMapButton.gameObject.SetActive(false);
+        this._playButton.gameObject.SetActive(false);
+        this._highScoreText.gameObject.SetActive(false);
+        this._energyImage.gameObject.SetActive(false);
     }
 
     private void SelectMap()
@@ -108,6 +114,10 @@ public class MainMenu : MonoBehaviour
     public void BackToMainMenu()
     {
         this.mapPanel.SetActive(false);
+        this._changeMapButton.gameObject.SetActive(true);
+        this._playButton.gameObject.SetActive(true);
+        this._highScoreText.gameObject.SetActive(true);
+        this._energyImage.gameObject.SetActive(true);
     }
 
     public void Play()
