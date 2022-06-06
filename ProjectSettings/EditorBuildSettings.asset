@@ -8,22 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 65c9d56f62a3aae4786fcf2af36f6be3
-  - enabled: 0
-    path: Assets/Scenes/Sandbox.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/Maps/SunnyDay.unity
-    guid: b89bb21aad730aa4bb3d49e7f9448d18
   - enabled: 1
     path: Assets/Scenes/Maps/FoggyNight.unity
-    guid: b7159b0cb5a867743be8cdd065c22d94
+    guid: 3eceeb9e07b4ce14e8a2e81de07c393a
   - enabled: 1
     path: Assets/Scenes/Maps/Night.unity
-    guid: 03ba07cbc176c694382d1ccba6f2c414
+    guid: 85072b4ae3ad6374a9e04f74d5b30bf7
   - enabled: 1
     path: Assets/Scenes/Maps/RainyDay.unity
-    guid: 50e72b069193cf749aeb5b056a9a7e61
+    guid: 1616109687167b945b9713b19f09ea86
   - enabled: 1
     path: Assets/Scenes/Maps/RainyNight.unity
-    guid: aa6923e0356abf54f904d4a4bde38c10
+    guid: de6526c2decd1984c8b4ae0141f5ad78
+  - enabled: 1
+    path: Assets/Scenes/Maps/SunnyDay.unity
+    guid: c4cc6b159e95ae045881ed09d26c0a54
   m_configObjects: {}
